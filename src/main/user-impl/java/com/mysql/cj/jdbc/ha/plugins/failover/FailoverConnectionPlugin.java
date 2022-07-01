@@ -103,15 +103,15 @@ public class FailoverConnectionPlugin implements IConnectionPlugin {
   private final Log logger;
   private final Pattern auroraDnsPattern =
       Pattern.compile(
-          "(.+)\\.(proxy-|cluster-|cluster-ro-|cluster-custom-)?([a-zA-Z0-9]+\\.[a-zA-Z0-9\\-]+\\.rds\\.amazonaws\\.com)",
+          "(.+)\\.(proxy-|cluster-|cluster-ro-|cluster-custom-)?([a-zA-Z0-9]+\\.[a-zA-Z0-9\\-]+\\.rds\\.amazonaws\\.com|cn)",
           Pattern.CASE_INSENSITIVE);
   private final Pattern auroraCustomClusterPattern =
       Pattern.compile(
-          "(.+)\\.(cluster-custom-[a-zA-Z0-9]+\\.[a-zA-Z0-9\\-]+\\.rds\\.amazonaws\\.com)",
+          "(.+)\\.(cluster-custom-[a-zA-Z0-9]+\\.[a-zA-Z0-9\\-]+\\.rds\\.amazonaws\\.com|cn)",
           Pattern.CASE_INSENSITIVE);
   private final Pattern auroraProxyDnsPattern =
       Pattern.compile(
-          "(.+)\\.(proxy-[a-zA-Z0-9]+\\.[a-zA-Z0-9\\-]+\\.rds\\.amazonaws\\.com)",
+          "(.+)\\.(proxy-[a-zA-Z0-9]+\\.[a-zA-Z0-9\\-]+\\.rds\\.amazonaws\\.com|cn)",
           Pattern.CASE_INSENSITIVE);
   protected IWriterFailoverHandler writerFailoverHandler = null;
   protected IReaderFailoverHandler readerFailoverHandler = null;
